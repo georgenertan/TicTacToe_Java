@@ -4,7 +4,7 @@
 in the Game Class we have the method "getInfo". In this method, a command is read, using the Scanner Class. The command 
 has to be:1 or 2(number of players). If the command is not "1" or "2" the user has to write the command again, until the 
 command is "1" or "2".
-  Next we need a board to play on. The "GamBoard" Class contains a bidimensional array, named "board", with a size of 
+  Next we need a board to play on. The "GameBoard" Class contains a bidimensional array, named "board", with a size of 
 3X3. This array has 9 cells, and a cell can have the following values:X, O, EMPTY. This values are store in the "Cell Enum". The board has to be empty at the beginning of every game, and that is done in the same Class, by the method "init()". In this method, all cells of the board are initialized with the "EMPTY" value.
   After the number of players is set, there are 2 situations. First, let's take the case with 2 players.
   In the "User" Class, the "void move(GameBoard gameBoard, Round round)" method gets another command. This one represents the coordinates of a cell(where the player wants to make his move). This command is checked if it is correct. The command has to be 2 numbers, separated by a " " character. The numbers can be:1, 2, or 3(coordinates). If the command is incorrect, the user has to introduce it again, until it is correct. This check is done by the "checkCommand" method. If the check is true, then 
