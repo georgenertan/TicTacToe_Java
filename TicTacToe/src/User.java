@@ -17,7 +17,7 @@ public class User extends Player{
 
         boolean correctCommand = false;
         while(!correctCommand) {
-            if (verifierCommand(command)){
+            if (checkCommand(command)){
                 String[] array = command.split(" ");
                 int coord1 = Integer.parseInt(array[0].trim());
                 int coord2 = Integer.parseInt(array[1].trim());
@@ -44,7 +44,7 @@ public class User extends Player{
 
 
     }
-    boolean verifierCommand(String comanda) {
+    boolean checkCommand(String comanda) {
         List<String> comenzi = List.of("1 1", "1 2", "1 3",
                                        "2 1", "2 2", "2 3",
                                        "3 1", "3 2", "3 3");

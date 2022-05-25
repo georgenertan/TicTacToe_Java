@@ -12,11 +12,11 @@ public class Game {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introdu numarul de jucatori(1 sau 2). Daca selectezi 1 " +
                 "vei juca cu calculatorul, daca selectezi 2, este nevoie de doi jucatori");
-        String cuvant = scanner.nextLine();
+        String command = scanner.nextLine();
 
         boolean nrPayersSelected = false;
         while (!nrPayersSelected) {
-            switch (cuvant) {
+            switch (command) {
                 case "1" -> {
                     setPlayers(1);
                     nrPayersSelected = true;
@@ -29,7 +29,7 @@ public class Game {
                 }
                 default -> {
                     System.out.println("Numarul nu este valid! Introdu un numar(1 sau 2): ");
-                    cuvant = scanner.nextLine();
+                    command = scanner.nextLine();
                 }
             }
         }
@@ -37,9 +37,9 @@ public class Game {
     }
 
      void start() {
+         getInfo();
         gameboard.init();
         gameboard.print();
-        getInfo();
         while(true) {
             player1.move(gameboard, round);
             changeRound();
