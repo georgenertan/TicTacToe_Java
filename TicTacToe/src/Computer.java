@@ -1,13 +1,11 @@
 import java.util.Random;
 
-public class Computer extends Player{
-
-
+public class Computer extends Player {
 
     int[] getRandomMove(GameBoard gameBoard) {
         int[][] moves = new int[9][2];
         int emptyCellsNO = 0;
-        for(int i = 0; i < gameBoard.board.length; i++) {
+        for (int i = 0; i < gameBoard.board.length; i++) {
             for (int j = 0; j < gameBoard.board[i].length; j++) {
                 if (gameBoard.board[i][j].equals(Cell.EMPTY)) {
                     moves[emptyCellsNO][0] = i;

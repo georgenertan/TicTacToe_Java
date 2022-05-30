@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class GameBoard {
     Cell[][] board = new Cell[3][3];
 
-
     void init() {
         for (Cell[] cells : board) {
             Arrays.fill(cells, Cell.EMPTY);
@@ -14,14 +13,11 @@ public class GameBoard {
         for (Cell[] cells : board) {
             for (Cell cell : cells) {
                 switch (cell) {
-                    case EMPTY ->
-                        System.out.print("_" + " ");
+                    case EMPTY -> System.out.print("_" + " ");
 
-                    case O ->
-                        System.out.print("O" + " ");
+                    case O -> System.out.print("O" + " ");
 
-                    default ->
-                        System.out.print("X" + " ");
+                    default -> System.out.print("X" + " ");
 
                 }
             }
@@ -32,8 +28,8 @@ public class GameBoard {
 
 
     boolean playerMove(int line, int col, Cell cell) {
-        if(board[line - 1][col - 1] == Cell.EMPTY) {
-            board[line -1][col -1] = cell;
+        if (board[line - 1][col - 1] == Cell.EMPTY) {
+            board[line - 1][col - 1] = cell;
             return true;
         } else {
             return false;
@@ -53,7 +49,7 @@ public class GameBoard {
         return GameState.DRAW;
     }
 
-    boolean isWin( Cell player) {
+    boolean isWin(Cell player) {
         for (Cell[] cells : board) {
             if (cells[0] == cells[1] && cells[1] == cells[2] && cells[2] == player) {
                 return true;

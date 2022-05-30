@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Game {
@@ -6,7 +5,6 @@ public class Game {
     Round round = Round.X;
     Player player1;
     Player player2;
-
 
     void getInfo() {
         Scanner scanner = new Scanner(System.in);
@@ -36,28 +34,28 @@ public class Game {
 
     }
 
-     void start() {
-         getInfo();
+    void start() {
+        getInfo();
         gameboard.init();
         gameboard.print();
-        while(true) {
+        while (true) {
             player1.move(gameboard, round);
             changeRound();
             gameboard.print();
-            if(gameOver()) {
+            if (gameOver()) {
                 break;
             }
             player2.move(gameboard, round);
             changeRound();
             gameboard.print();
-            if(gameOver()) {
+            if (gameOver()) {
                 break;
             }
         }
-         System.out.println("Jocul s-a terminat");
-     }
+        System.out.println("Jocul s-a terminat");
+    }
 
-     private void changeRound() {
+    private void changeRound() {
         if (round.equals(Round.X)) {
             round = Round.O;
             System.out.println("Mutare Player1");
@@ -65,19 +63,19 @@ public class Game {
             round = Round.X;
             System.out.println("Mutare Player2");
         }
-     }
+    }
 
-     void setPlayers(int nrPlayers) {
+    void setPlayers(int nrPlayers) {
         player1 = new User();
-        if(nrPlayers == 1) {
+        if (nrPlayers == 1) {
             player2 = new Computer();
         } else {
             player2 = new User();
         }
 
-     }
+    }
 
-     boolean gameOver() {
+    boolean gameOver() {
         if (gameboard.getGameState().equals(GameState.X_WIN)) {
             System.out.println("X a castigat");
             return true;
@@ -91,5 +89,5 @@ public class Game {
             return true;
         }
         return false;
-     }
+    }
 }
